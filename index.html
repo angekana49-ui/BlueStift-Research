@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bluestift Research — 2025–2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --p1:#7c8ef7;--p2:#9b72d4;--p3:#c4a8f5;
+  --glass:rgba(255,255,255,0.62);--glass-b:rgba(170,160,230,0.22);
+  --txt:#2a2460;--txt2:#5b5490;--txt3:#9591c0;
+  --shadow:0 4px 32px rgba(100,80,200,0.10),0 1px 4px rgba(100,80,200,0.07);
+  --r:20px;--rs:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;min-height:100vh;background:#eef1ff;overflow-x:hidden;color:var(--txt);}
+
+/* BG */
+.bg-wrap{position:fixed;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 20%,rgba(180,195,255,.55) 0%,transparent 65%),
+    radial-gradient(ellipse 70% 70% at 85% 80%,rgba(195,165,245,.45) 0%,transparent 65%),
+    radial-gradient(ellipse 60% 50% at 55% 10%,rgba(155,200,255,.4) 0%,transparent 60%),
+    linear-gradient(155deg,#e8edff 0%,#f2eeff 40%,#e4f0ff 100%);
+}
+.orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(35px);}
+.orb1{width:520px;height:520px;background:radial-gradient(circle,rgba(160,180,255,.28) 0%,transparent 70%);top:-8%;right:-6%;animation:d1 26s ease-in-out infinite;}
+.orb2{width:380px;height:380px;background:radial-gradient(circle,rgba(180,140,250,.22) 0%,transparent 70%);bottom:8%;left:-5%;animation:d2 32s ease-in-out infinite;}
+.orb3{width:280px;height:280px;background:radial-gradient(circle,rgba(130,200,255,.2) 0%,transparent 70%);top:45%;right:5%;animation:d1 20s 4s ease-in-out infinite;}
+@keyframes d1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,50px) scale(1.08)}}
+@keyframes d2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-35px) scale(1.06)}}
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* PAGE */
+.page{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:32px 20px 80px;}
+
+/* LANG BAR */
+.lang-bar{width:100%;max-width:740px;display:flex;justify-content:flex-end;gap:4px;margin-bottom:14px;flex-wrap:wrap;}
+.lang-btn{padding:5px 10px;border-radius:8px;border:1px solid rgba(124,142,247,.2);background:rgba(255,255,255,.5);font-size:.72rem;font-weight:500;color:var(--txt2);cursor:pointer;transition:all .18s ease;display:flex;align-items:center;gap:4px;}
+.lang-btn:hover{background:rgba(255,255,255,.8);border-color:rgba(124,142,247,.4);color:var(--txt);}
+.lang-btn.active{background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;border-color:transparent;box-shadow:0 2px 10px rgba(124,142,247,.3);}
+
+/* LOGO BAR */
+.logo-bar{width:100%;max-width:740px;display:flex;align-items:center;gap:10px;margin-bottom:36px;}
+.logo-img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(124,142,247,.3);box-shadow:0 0 16px rgba(124,142,247,.2);}
+.logo-name{font-size:.82rem;font-weight:600;color:var(--txt2);letter-spacing:.06em;text-transform:uppercase;}
+.logo-sep{width:1px;height:14px;background:rgba(124,142,247,.25);margin:0 4px;}
+.logo-tag{font-size:.76rem;color:var(--txt3);}
+
+/* HERO CARD */
+.hero-card{width:100%;max-width:740px;background:var(--glass);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid var(--glass-b);border-radius:26px;padding:50px 46px;box-shadow:var(--shadow);margin-bottom:20px;animation:up .75s cubic-bezier(.2,0,.1,1) both;}
+.hero-label{display:inline-flex;align-items:center;gap:8px;background:rgba(124,142,247,.12);border:1px solid rgba(124,142,247,.28);border-radius:99px;padding:5px 14px;font-size:.7rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--p1);margin-bottom:22px;}
+.hero-label::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--p1);display:block;animation:blink 2.2s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.hero-card h1{font-family:'DM Serif Display',serif;font-size:clamp(1.9rem,4.5vw,2.85rem);line-height:1.15;color:var(--txt);margin-bottom:16px;letter-spacing:-.025em;}
+.hero-card h1 em{font-style:italic;color:var(--p2);}
+.hero-card>p{font-size:1rem;line-height:1.7;color:var(--txt2);margin-bottom:22px;max-width:560px;}
+.hero-note{font-size:.83rem;color:var(--txt3);}
+.meta-row{display:flex;gap:20px;flex-wrap:wrap;padding-top:22px;border-top:1px solid rgba(124,142,247,.12);}
+.meta-item{display:flex;align-items:center;gap:7px;font-size:.78rem;color:var(--txt3);}
+
+/* ── SEGMENT — fixed, always visible, clearly selected ── */
+.segment-wrap{
+  width:100%;max-width:740px;
+  position:sticky;top:12px;z-index:50;
+  margin-bottom:20px;
+  animation:up .75s .08s cubic-bezier(.2,0,.1,1) both;
+}
+.segment{
+  display:flex;
+  background:rgba(255,255,255,.78);
+  border:1.5px solid rgba(124,142,247,.25);
+  border-radius:16px;padding:5px;gap:5px;
+  box-shadow:0 4px 20px rgba(100,80,200,.12),0 0 0 0.5px rgba(124,142,247,.1);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+}
+.seg-btn{
+  flex:1;padding:13px 16px;border:1.5px solid transparent;border-radius:12px;
+  background:transparent;color:var(--txt3);
+  font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;
+  cursor:pointer;transition:all .22s ease;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  letter-spacing:.01em;
+}
+.seg-btn:not(.active):hover{background:rgba(124,142,247,.08);color:var(--txt2);}
+.seg-btn.active{
+  background:linear-gradient(135deg,var(--p1) 0%,var(--p2) 100%);
+  color:#fff;
+  border-color:rgba(255,255,255,.3);
+  box-shadow:0 3px 16px rgba(124,142,247,.38),0 1px 4px rgba(100,80,200,.15);
+  font-weight:600;
+}
+.seg-btn svg{opacity:.8;flex-shrink:0;}
+.seg-btn.active svg{opacity:1;}
+/* subtle label under icon */
+.seg-label{display:flex;flex-direction:column;align-items:flex-start;text-align:left;}
+.seg-sub{font-size:.68rem;font-weight:400;opacity:.65;margin-top:1px;}
+.seg-btn.active .seg-sub{opacity:.85;}
+
+/* PROGRESS */
+.progress-wrap{width:100%;max-width:740px;margin-bottom:18px;}
+.progress-label{display:flex;justify-content:space-between;font-size:.72rem;color:var(--txt3);margin-bottom:7px;font-weight:500;}
+.progress-track{height:4px;background:rgba(124,142,247,.15);border-radius:99px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--p1),var(--p3));transition:width .5s cubic-bezier(.4,0,.2,1);}
+
+/* START ROW */
+#start-row{width:100%;max-width:740px;display:flex;justify-content:flex-end;margin-bottom:20px;animation:up .75s .14s cubic-bezier(.2,0,.1,1) both;}
+
+/* Q CARD */
+.q-card{width:100%;max-width:740px;background:var(--glass);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid var(--glass-b);border-radius:var(--r);padding:38px 42px;box-shadow:var(--shadow);margin-bottom:18px;animation:up .45s ease both;display:none;}
+.q-card.visible{display:block;}
+.q-number{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--p1);margin-bottom:12px;opacity:.8;display:flex;align-items:center;gap:10px;}
+.q-number::after{content:'';flex:1;height:1px;background:rgba(124,142,247,.14);}
+.q-label{display:inline-block;font-size:.67rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;background:rgba(155,114,212,.1);border:1px solid rgba(155,114,212,.25);color:var(--p2);border-radius:99px;padding:3px 11px;margin-bottom:14px;}
+.q-card h2{font-family:'DM Serif Display',serif;font-size:clamp(1.15rem,2.6vw,1.45rem);line-height:1.32;color:var(--txt);margin-bottom:20px;font-weight:400;}
+.q-textarea{width:100%;min-height:128px;background:rgba(255,255,255,.7);border:1.5px solid rgba(124,142,247,.2);border-radius:var(--rs);padding:15px 17px;color:var(--txt);font-family:'DM Sans',sans-serif;font-size:.93rem;line-height:1.65;resize:vertical;transition:border-color .2s,background .2s;}
+.q-textarea::placeholder{color:var(--txt3);font-size:.88rem;}
+.q-textarea:focus{outline:none;border-color:rgba(124,142,247,.55);background:rgba(255,255,255,.9);}
+
+/* BUTTONS */
+.btn-prev,.btn-next,.btn-submit{padding:12px 26px;border-radius:var(--rs);font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;border:none;transition:all .22s ease;display:inline-flex;align-items:center;gap:8px;}
+.btn-prev{background:rgba(124,142,247,.1);border:1px solid rgba(124,142,247,.22);color:var(--txt2);}
+.btn-prev:hover{background:rgba(124,142,247,.18);color:var(--txt);}
+.btn-prev:disabled{opacity:.3;cursor:not-allowed;}
+.btn-next,.btn-submit{background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;box-shadow:0 3px 18px rgba(124,142,247,.35);}
+.btn-next:hover,.btn-submit:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(124,142,247,.42);filter:brightness(1.05);}
+.btn-next:disabled{opacity:.3;cursor:not-allowed;transform:none;filter:none;}
+.nav-row{width:100%;max-width:740px;display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:6px;}
+.q-counter{font-size:.78rem;color:var(--txt3);font-weight:500;}
+
+/* ── THANK YOU ── */
+#thank-you{display:none;width:100%;max-width:700px;animation:up .65s ease both;}
+.ty-card{background:var(--glass);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid var(--glass-b);border-radius:26px;padding:56px 46px;text-align:center;box-shadow:var(--shadow);overflow:hidden;position:relative;}
+.ty-card h2{font-family:'DM Serif Display',serif;font-size:2.1rem;color:var(--txt);margin-bottom:12px;letter-spacing:-.02em;}
+.ty-card h2 em{font-style:italic;color:var(--p2);}
+.ty-card>p{font-size:.97rem;color:var(--txt2);line-height:1.7;margin-bottom:32px;}
+.email-capture{background:rgba(255,255,255,.65);border:1px solid rgba(124,142,247,.2);border-radius:var(--rs);padding:26px;text-align:left;margin-bottom:24px;}
+.email-capture p{font-size:.86rem;color:var(--txt2);margin-bottom:14px;line-height:1.6;}
+.email-row{display:flex;gap:10px;flex-wrap:wrap;}
+.email-input{flex:1;min-width:190px;padding:11px 15px;background:rgba(255,255,255,.85);border:1.5px solid rgba(124,142,247,.25);border-radius:var(--rs);color:var(--txt);font-family:'DM Sans',sans-serif;font-size:.88rem;transition:border-color .2s;}
+.email-input::placeholder{color:var(--txt3);}
+.email-input:focus{outline:none;border-color:rgba(124,142,247,.55);}
+.btn-email{padding:11px 20px;background:linear-gradient(135deg,var(--p1),var(--p2));border:none;border-radius:var(--rs);color:#fff;font-family:'DM Sans',sans-serif;font-size:.86rem;font-weight:600;cursor:pointer;transition:all .22s ease;white-space:nowrap;box-shadow:0 3px 14px rgba(124,142,247,.3);}
+.btn-email:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(124,142,247,.38);}
+.ty-footer{font-size:.76rem;color:var(--txt3);line-height:1.65;white-space:pre-line;}
+
+/* ── BITMOJI ZONE ── */
+.bitmoji-zone{display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:28px;position:relative;}
+.bitmoji{font-size:5rem;display:block;line-height:1;animation:bitmoji-bounce 1.2s cubic-bezier(.36,.07,.19,.97) both;}
+@keyframes bitmoji-bounce{0%{transform:scale(0) rotate(-20deg)}60%{transform:scale(1.15) rotate(5deg)}80%{transform:scale(.95) rotate(-3deg)}100%{transform:scale(1) rotate(0)}}
+.bitmoji-speech{background:rgba(255,255,255,.85);border:1px solid rgba(124,142,247,.25);border-radius:14px;padding:8px 16px;font-size:.82rem;color:var(--txt2);font-weight:500;animation:fadein .5s .6s ease both;position:relative;}
+.bitmoji-speech::after{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%);border:5px solid transparent;border-bottom-color:rgba(255,255,255,.85);}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.floating-hearts{position:absolute;top:0;left:50%;pointer-events:none;}
+.fh{position:absolute;font-size:1.4rem;animation:float-up 2s ease-out both;}
+@keyframes float-up{0%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-90px) scale(.7)}}
+
+/* ── CONFETTI CANVAS ── */
+#confetti-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:999;}
+
+/* ── RTL support ── */
+[dir="rtl"] .meta-row{flex-direction:row-reverse;}
+[dir="rtl"] .q-number::after{display:none;}
+[dir="rtl"] .q-number::before{content:'';flex:1;height:1px;background:rgba(124,142,247,.14);}
+[dir="rtl"] .nav-row{flex-direction:row-reverse;}
+[dir="rtl"] .logo-bar{flex-direction:row-reverse;}
+[dir="rtl"] .lang-bar{justify-content:flex-start;}
+[dir="rtl"] .hero-card>p,[dir="rtl"] .hero-card h1{text-align:right;}
+
+@media(max-width:580px){
+  .hero-card,.q-card{padding:28px 22px;}
+  .ty-card{padding:36px 22px;}
+  .segment{flex-direction:column;}
+  .seg-btn{justify-content:flex-start;padding:12px 14px;}
+}
+</style>
+</head>
+<body>
+<canvas id="confetti-canvas"></canvas>
+<div class="bg-wrap"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
+<div class="page">
+
+  <!-- LANG SWITCHER -->
+  <div class="lang-bar" id="lang-bar"></div>
+
+  <!-- LOGO -->
+  <div class="logo-bar">
+    <img class="logo-img" src="assets/bluestift-logo.jpeg" alt="Bluestift"
+         onerror="this.style.display='none';document.getElementById('logo-fallback').style.display='flex'">
+    <div id="logo-fallback" style="display:none;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#7c8ef7,#9b72d4);align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;">B</div>
+    <span class="logo-name">Bluestift</span>
+    <div class="logo-sep"></div>
+    <span class="logo-tag" id="logo-tag">research.thebluestift.com</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero-card" id="intro-card">
+    <div class="hero-label" id="hero-badge"></div>
+    <h1 id="hero-h1"></h1>
+    <p id="hero-p"></p>
+    <p class="hero-note" id="hero-note"></p>
+    <div class="meta-row">
+      <div class="meta-item"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span id="meta-time"></span></div>
+      <div class="meta-item"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span id="meta-anon"></span></div>
+      <div class="meta-item"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span id="meta-who"></span></div>
+    </div>
+  </div>
+
+  <!-- SEGMENT (sticky, always visible) -->
+  <div class="segment-wrap" id="segment-wrap">
+    <div class="segment">
+      <button class="seg-btn active" onclick="setSegment('teachers')" id="seg-teachers">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <div class="seg-label">
+          <span id="seg-teacher-label">I'm a Teacher</span>
+          <span class="seg-sub" id="seg-teacher-sub">Educators & admins</span>
+        </div>
+      </button>
+      <button class="seg-btn" onclick="setSegment('students')" id="seg-students">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        <div class="seg-label">
+          <span id="seg-student-label">I'm a Student</span>
+          <span class="seg-sub" id="seg-student-sub">Any grade level</span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap" id="progress-wrap" style="display:none;">
+    <div class="progress-label">
+      <span id="progress-text">Question 1 of 5</span>
+      <span id="progress-pct">20%</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:20%"></div></div>
+  </div>
+
+  <!-- START -->
+  <div id="start-row">
+    <button class="btn-next" onclick="startSurvey()" style="padding:13px 34px;font-size:.93rem;">
+      <span id="start-btn-label">Start — it's short</span>
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+
+  <!-- QUESTIONS (teachers) -->
+  <div id="q-teachers"></div>
+  <!-- QUESTIONS (students) -->
+  <div id="q-students" style="display:none;"></div>
+
+  <!-- NAV -->
+  <div class="nav-row" id="nav-row" style="display:none;">
+    <button class="btn-prev" id="btn-prev" onclick="prevQ()" disabled>
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      <span id="nav-back">Back</span>
+    </button>
+    <span class="q-counter" id="q-counter"></span>
+    <button class="btn-next" id="btn-next" onclick="nextQ()">
+      <span id="nav-next-label">Next</span>
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+
+  <!-- THANK YOU -->
+  <div id="thank-you">
+    <div class="ty-card">
+      <div class="bitmoji-zone" id="bitmoji-zone">
+        <span class="bitmoji" id="bitmoji">🎊</span>
+        <div class="bitmoji-speech" id="bitmoji-speech">This means a lot to us 💙</div>
+        <div class="floating-hearts" id="floating-hearts"></div>
+      </div>
+      <h2 id="ty-h2"></h2>
+      <p id="ty-p"></p>
+      <div class="email-capture">
+        <p id="email-cap-p"></p>
+        <div class="email-row">
+          <input class="email-input" type="email" id="email-input">
+          <button class="btn-email" id="email-btn" onclick="submitEmail()"></button>
+        </div>
+        <p style="margin-top:10px;font-size:.72rem;color:var(--txt3);margin-bottom:0;" id="email-note"></p>
+      </div>
+      <p class="ty-footer" id="ty-footer"></p>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+<!-- i18n files -->
+<script src="i18n/fr.js"></script>
+<script src="i18n/es.js"></script>
+<script src="i18n/it.js"></script>
+<script src="i18n/pt.js"></script>
+<script src="i18n/ar.js"></script>
+<script src="i18n/de.js"></script>
+
+<script>
+/* ── LANGUAGES ── */
+const LANG_EN = {
+  code:'en',name:'English',flag:'🇺🇸',dir:'ltr',
+  nav:{tag:'research.thebluestift.com'},
+  hero:{
+    badge:'2025–2026 Post-Mortem Study',
+    h1_line1:"We're done pitching.",h1_em:"We're listening.",
+    p1:"We're running a qualitative study on what actually happened in classrooms this year — the real friction, the workarounds, the moments that worked. No multiple choice. No hidden agenda. Just your honest experience.",
+    note:'5 open questions · Anonymous · ~4 minutes',
+    meta_time:'About 4 minutes',meta_anon:'Anonymous by default',meta_who:'Teachers & Students',
+  },
+  segment:{teacher:"I'm a Teacher",student:"I'm a Student"},
+  segment_sub:{teacher:'Educators & admins',student:'Any grade level'},
+  start_btn:"Start — it's short",
+  progress:{label:(n,t)=>`Question ${n} of ${t}`},
+  nav_btn:{back:'Back',next:'Next',submit:'Submit'},
+  counter:(n,t)=>`${n} / ${t}`,
+  teachers:[
+    {number:'Question 01',label:'The time sink',q:"Think about last week. Outside of actually teaching, what took the most time on your computer — and roughly how long?",ph:"Be specific if you can. 'Entering grades into PowerSchool for 45 min every evening' beats a vague answer every time."},
+    {number:'Question 02',label:'The gap',q:"When a student is lost and you can't reach them in the moment — what usually happens next? What do they do, and what do you wish they had?",ph:'What do your students actually do at 10pm when they\'re stuck?'},
+    {number:'Question 03',label:'The data blind spot',q:"When you look at your student data in your LMS, what's the one thing you wish it told you — that it never does?",ph:'The insight that would actually change how you teach the next day.'},
+    {number:'Question 04',label:'The AI reality',q:"Has any student submitted AI-generated work this year? How did you handle it — and what did you actually need in that moment?",ph:"No judgment here. Just what really happened and what you were missing."},
+    {number:'Question 05',label:'The one fix',q:"If you could fix one thing about the way technology works in your classroom — not a wishlist, just one real thing — what would it be?",ph:'The thing that, if fixed tomorrow, would make Monday noticeably better.'},
+  ],
+  students:[
+    {number:'Question 01',label:'The click moment',q:"Think about the last time something difficult actually clicked for you. Where were you, and what made it click?",ph:'Real learning, not just memorizing for a test.'},
+    {number:'Question 02',label:'The stuck moment',q:"When you're stuck at night and can't ask your teacher — what do you actually do? Walk me through it.",ph:"YouTube, ChatGPT, a friend on Discord? Be honest — no one's grading this."},
+    {number:'Question 03',label:'The AI truth',q:"Have you used AI for school this year? Don't worry about the rules — just tell me honestly how you used it and whether it actually helped you learn.",ph:"The real story, not the one you'd tell your teacher."},
+    {number:'Question 04',label:'The useless app',q:"What's the last app or tool your school made you use that felt like a complete waste of time? What made it useless?",ph:"Name it if you want. What specifically made it feel pointless?"},
+    {number:'Question 05',label:'The ideal tool',q:"If you had an app that actually helped you learn — not grade you, not track you, just genuinely help — what would it do first?",ph:"Not features. What would it feel like? What problem would it solve on day one?"},
+  ],
+  thankyou:{
+    h2_line1:'This is exactly',h2_em:'what we needed.',
+    p:"Your answers are going directly into how we build Bluestift — not a report, not a slide deck. The actual product. The frustrations you just described are the spec.",
+    email_title:'Want to see what we build from this?',
+    email_sub:"Leave your email and we'll show you the infrastructure we design from your words — before anyone else.",
+    email_ph:'your@email.com',email_btn:'Keep me posted',
+    email_note:'No spam. One email when we launch. That\'s it.',
+    footer:"We're a small team building something that should have existed five years ago.\nIf you know a teacher or student with things to say — send them here.",
+  },
+  bitmoji_speech:"This means a lot to us 💙",
+};
+
+const LANGS = [LANG_EN];
+if(typeof LANG_FR!=='undefined') LANGS.push(LANG_FR);
+if(typeof LANG_ES!=='undefined') LANGS.push(LANG_ES);
+if(typeof LANG_IT!=='undefined') LANGS.push(LANG_IT);
+if(typeof LANG_PT!=='undefined') LANGS.push(LANG_PT);
+if(typeof LANG_AR!=='undefined') LANGS.push(LANG_AR);
+if(typeof LANG_DE!=='undefined') LANGS.push(LANG_DE);
+
+let currentLang = LANG_EN;
+let segment = 'teachers';
+let currentQ = 0;
+const TOTAL = 5;
+
+/* ── BITMOJI SEQUENCE ── */
+const BITMOJI_SEQ = ['🙏','😍','🤩','😊','💙','😚','✨','🎉'];
+const SPEECHES_EN = [
+  "This means a lot to us 💙",
+  "You just helped us build the right thing 🙏",
+  "Real talk. This is gold. ✨",
+  "We're listening, for real 👂",
+];
+let bimojiIdx = 0;
+let bimojiTimer;
+
+function startBitmoji() {
+  bimojiIdx = 0;
+  animateBitmoji();
+  bimojiTimer = setInterval(()=>{
+    bimojiIdx = (bimojiIdx+1) % BITMOJI_SEQ.length;
+    animateBitmoji();
+    if(bimojiIdx % 2 === 0) spawnHearts();
+  }, 1800);
+  spawnHearts();
+  setTimeout(spawnHearts, 600);
+  setTimeout(spawnHearts, 1200);
+}
+
+function animateBitmoji() {
+  const el = document.getElementById('bitmoji');
+  el.textContent = BITMOJI_SEQ[bimojiIdx];
+  el.style.animation = 'none';
+  el.offsetHeight;
+  el.style.animation = 'bitmoji-bounce .6s cubic-bezier(.36,.07,.19,.97) both';
+  const speeches = currentLang.thankyou ? [currentLang.thankyou.email_sub] : SPEECHES_EN;
+  if(bimojiIdx === 0) {
+    const sp = document.getElementById('bitmoji-speech');
+    sp.style.animation = 'none'; sp.offsetHeight;
+    sp.style.animation = 'fadein .5s ease both';
+  }
+}
+
+function spawnHearts() {
+  const container = document.getElementById('floating-hearts');
+  const hearts = ['💙','💜','✨','🌟','💫','🫶','❤️'];
+  for(let i=0;i<4;i++){
+    setTimeout(()=>{
+      const h = document.createElement('span');
+      h.className = 'fh';
+      h.textContent = hearts[Math.floor(Math.random()*hearts.length)];
+      h.style.left = (Math.random()*120-60)+'px';
+      h.style.animationDelay = (Math.random()*0.4)+'s';
+      h.style.fontSize = (.9+Math.random()*.7)+'rem';
+      container.appendChild(h);
+      setTimeout(()=>h.remove(), 2200);
+    }, i*150);
+  }
+}
+
+/* ── CONFETTI ── */
+let confettiRunning = false;
+function launchConfetti() {
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  confettiRunning = true;
+  const colors = ['#7c8ef7','#9b72d4','#c4a8f5','#f093fb','#4facfe','#fbbf24','#34d399'];
+  const pieces = Array.from({length:120},()=>({
+    x: Math.random()*canvas.width,
+    y: -10 - Math.random()*canvas.height*.3,
+    w: 6+Math.random()*8, h: 8+Math.random()*6,
+    r: Math.random()*Math.PI*2,
+    rv: (Math.random()-.5)*.18,
+    vy: 1.5+Math.random()*3,
+    vx: (Math.random()-.5)*2.5,
+    color: colors[Math.floor(Math.random()*colors.length)],
+    opacity: .8+Math.random()*.2,
+  }));
+  let frame=0;
+  function draw(){
+    if(!confettiRunning){ctx.clearRect(0,0,canvas.width,canvas.height);return;}
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    pieces.forEach(p=>{
+      ctx.save();ctx.globalAlpha=p.opacity*(1-frame/220);
+      ctx.translate(p.x,p.y);ctx.rotate(p.r);
+      ctx.fillStyle=p.color;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+      ctx.restore();
+      p.x+=p.vx; p.y+=p.vy; p.r+=p.rv; p.vy+=.04;
+    });
+    frame++;
+    if(frame<240) requestAnimationFrame(draw);
+    else{confettiRunning=false;ctx.clearRect(0,0,canvas.width,canvas.height);}
+  }
+  draw();
+}
+
+/* ── RENDER LANG ── */
+function renderLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang.code;
+  document.documentElement.dir = lang.dir || 'ltr';
+
+  // Lang buttons
+  document.querySelectorAll('.lang-btn').forEach(b=>{
+    b.classList.toggle('active', b.dataset.code === lang.code);
+  });
+
+  // Hero
+  document.getElementById('hero-badge').textContent = lang.hero.badge;
+  document.getElementById('hero-h1').innerHTML = lang.hero.h1_line1+'<br><em>'+lang.hero.h1_em+'</em>';
+  document.getElementById('hero-p').textContent = lang.hero.p1;
+  document.getElementById('hero-note').textContent = lang.hero.note;
+  document.getElementById('meta-time').textContent = lang.hero.meta_time;
+  document.getElementById('meta-anon').textContent = lang.hero.meta_anon;
+  document.getElementById('meta-who').textContent = lang.hero.meta_who;
+
+  // Segment
+  document.getElementById('seg-teacher-label').textContent = lang.segment.teacher;
+  document.getElementById('seg-student-label').textContent = lang.segment.student;
+  if(lang.segment_sub){
+    document.getElementById('seg-teacher-sub').textContent = lang.segment_sub.teacher;
+    document.getElementById('seg-student-sub').textContent = lang.segment_sub.student;
+  }
+
+  // Start btn
+  document.getElementById('start-btn-label').textContent = lang.start_btn;
+
+  // Nav
+  document.getElementById('nav-back').textContent = lang.nav_btn.back;
+
+  // Questions
+  buildQuestions('teachers', lang.teachers, lang);
+  buildQuestions('students', lang.students, lang);
+
+  // Thank you
+  const ty = lang.thankyou;
+  document.getElementById('ty-h2').innerHTML = ty.h2_line1+'<br><em>'+ty.h2_em+'</em>';
+  document.getElementById('ty-p').textContent = ty.p;
+  document.getElementById('email-cap-p').innerHTML = '<strong style="color:var(--txt);font-weight:600;">'+ty.email_title+'</strong><br>'+ty.email_sub;
+  document.getElementById('email-input').placeholder = ty.email_ph;
+  document.getElementById('email-btn').textContent = ty.email_btn;
+  document.getElementById('email-note').textContent = ty.email_note;
+  document.getElementById('ty-footer').textContent = ty.footer;
+  if(ty.bitmoji_speech) document.getElementById('bitmoji-speech').textContent = ty.bitmoji_speech;
+
+  // If survey in progress, re-show current question
+  if(currentQ > 0) { showQ(currentQ); }
+}
+
+function buildQuestions(type, qs, lang) {
+  const container = document.getElementById('q-'+type);
+  container.innerHTML = '';
+  qs.forEach((q, i) => {
+    const div = document.createElement('div');
+    div.className = 'q-card';
+    div.dataset.q = i+1;
+    div.innerHTML = `
+      <div class="q-number">${q.number}</div>
+      <div class="q-label">${q.label}</div>
+      <h2>${q.q}</h2>
+      <textarea class="q-textarea" placeholder="${q.ph}"></textarea>
+    `;
+    container.appendChild(div);
+  });
+  // Re-show current q
+  if(currentQ > 0) {
+    container.querySelectorAll('.q-card').forEach(c=>c.classList.remove('visible'));
+    const t = container.querySelector('[data-q="'+currentQ+'"]');
+    if(t) t.classList.add('visible');
+  }
+}
+
+/* ── INIT LANG BAR ── */
+function initLangBar() {
+  const bar = document.getElementById('lang-bar');
+  LANGS.forEach(lang=>{
+    const btn = document.createElement('button');
+    btn.className = 'lang-btn' + (lang.code==='en'?' active':'');
+    btn.dataset.code = lang.code;
+    btn.innerHTML = `<span>${lang.flag}</span> ${lang.name}`;
+    btn.onclick = () => renderLang(lang);
+    bar.appendChild(btn);
+  });
+}
+
+/* ── SEGMENT ── */
+function setSegment(s) {
+  segment = s;
+  document.getElementById('seg-teachers').classList.toggle('active', s==='teachers');
+  document.getElementById('seg-students').classList.toggle('active', s==='students');
+  if(currentQ > 0) {
+    document.getElementById('q-teachers').style.display = s==='teachers'?'block':'none';
+    document.getElementById('q-students').style.display = s==='students'?'block':'none';
+    showQ(currentQ);
+  }
+}
+
+/* ── SURVEY FLOW ── */
+function startSurvey() {
+  document.getElementById('intro-card').style.display='none';
+  document.getElementById('start-row').style.display='none';
+  document.getElementById('progress-wrap').style.display='block';
+  document.getElementById('nav-row').style.display='flex';
+  document.getElementById('q-teachers').style.display=segment==='teachers'?'block':'none';
+  document.getElementById('q-students').style.display=segment==='students'?'block':'none';
+  currentQ=1; showQ(1);
+}
+
+function showQ(n) {
+  const c = document.getElementById(segment==='teachers'?'q-teachers':'q-students');
+  c.querySelectorAll('.q-card').forEach(el=>el.classList.remove('visible'));
+  const t = c.querySelector('[data-q="'+n+'"]');
+  if(t) t.classList.add('visible');
+
+  const pct = Math.round(n/TOTAL*100);
+  document.getElementById('progress-fill').style.width=pct+'%';
+  const lbl = currentLang.progress.label(n, TOTAL);
+  document.getElementById('progress-text').textContent=lbl;
+  document.getElementById('progress-pct').textContent=pct+'%';
+  document.getElementById('btn-prev').disabled=n===1;
+  document.getElementById('q-counter').textContent=currentLang.counter(n,TOTAL);
+
+  const nb=document.getElementById('btn-next');
+  const nl=document.getElementById('nav-next-label');
+  if(n===TOTAL){
+    nl.textContent=currentLang.nav_btn.submit;
+    nb.setAttribute('onclick','submitSurvey()');
+  } else {
+    nl.textContent=currentLang.nav_btn.next;
+    nb.setAttribute('onclick','nextQ()');
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function nextQ(){if(currentQ<TOTAL){currentQ++;showQ(currentQ);}}
+function prevQ(){if(currentQ>1){currentQ--;showQ(currentQ);}}
+
+/* ── SUPABASE CONFIG ──
+   Replace SUPABASE_URL and SUPABASE_ANON_KEY with your actual values.
+   The anon key is safe to expose — RLS blocks all reads from anon.
+   Get them from: Supabase Dashboard → Project Settings → API
+── */
+const SUPABASE_URL      = 'https://jkcztwqxvmsrfqiwvyxp.supabase.co';
+const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY_HERE'; // ← paste your anon key
+
+let surveyStartTime = Date.now();
+let savedResponseId = null;
+
+async function supabaseInsert(table, payload) {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Prefer': 'return=representation',
+      },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) {
+      const err = await res.text();
+      console.error(`Supabase insert error [${table}]:`, err);
+      return null;
+    }
+    const data = await res.json();
+    return data[0] || null;
+  } catch (e) {
+    console.error('Supabase network error:', e);
+    return null;
+  }
+}
+
+function collectAnswers() {
+  const isTeacher = segment === 'teachers';
+  const container = document.getElementById(isTeacher ? 'q-teachers' : 'q-students');
+  const areas = container.querySelectorAll('.q-textarea');
+  const vals = Array.from(areas).map(a => a.value.trim() || null);
+
+  const elapsed = Math.round((Date.now() - surveyStartTime) / 1000);
+
+  if (isTeacher) {
+    return {
+      segment: 'teachers',
+      language: currentLang.code,
+      user_agent: navigator.userAgent,
+      referrer: document.referrer || null,
+      time_to_complete_seconds: elapsed,
+      t_q1_time_sink:      vals[0],
+      t_q2_gap:            vals[1],
+      t_q3_data_blindspot: vals[2],
+      t_q4_ai_reality:     vals[3],
+      t_q5_one_fix:        vals[4],
+    };
+  } else {
+    return {
+      segment: 'students',
+      language: currentLang.code,
+      user_agent: navigator.userAgent,
+      referrer: document.referrer || null,
+      time_to_complete_seconds: elapsed,
+      s_q1_click_moment: vals[0],
+      s_q2_stuck:        vals[1],
+      s_q3_ai_truth:     vals[2],
+      s_q4_useless_app:  vals[3],
+      s_q5_ideal_tool:   vals[4],
+    };
+  }
+}
+
+async function submitSurvey() {
+  // Hide form immediately — UX first
+  document.getElementById('q-teachers').style.display='none';
+  document.getElementById('q-students').style.display='none';
+  document.getElementById('nav-row').style.display='none';
+  document.getElementById('progress-wrap').style.display='none';
+  const ty = document.getElementById('thank-you');
+  ty.style.display = 'block';
+  window.scrollTo({top:0, behavior:'smooth'});
+
+  // Fire confetti + bitmoji right away
+  setTimeout(launchConfetti, 100);
+  setTimeout(startBitmoji, 300);
+  setTimeout(launchConfetti, 2500);
+
+  // Save to Supabase in background
+  const payload = collectAnswers();
+  const saved = await supabaseInsert('research_responses', payload);
+  if (saved) savedResponseId = saved.id;
+}
+
+async function submitEmail() {
+  const v = document.getElementById('email-input').value.trim();
+  if (!v || !v.includes('@')) {
+    document.getElementById('email-input').style.borderColor = 'rgba(200,80,80,.5)';
+    return;
+  }
+
+  const b = document.getElementById('email-btn');
+  b.textContent = '…';
+  b.disabled = true;
+
+  const emailPayload = {
+    email: v,
+    language: currentLang.code,
+    segment: segment,
+    response_id: savedResponseId || null,
+  };
+
+  const saved = await supabaseInsert('research_emails', emailPayload);
+
+  if (saved) {
+    b.textContent = '✓ ' + (currentLang.thankyou.email_btn || 'Done');
+    b.style.background = 'linear-gradient(135deg,#5bc99a,#3aab7e)';
+    document.getElementById('email-input').disabled = true;
+    spawnHearts(); spawnHearts();
+  } else {
+    // Email already exists (UNIQUE constraint) → still a win
+    b.textContent = '✓ Already in';
+    b.style.background = 'linear-gradient(135deg,#5bc99a,#3aab7e)';
+    document.getElementById('email-input').disabled = true;
+  }
+}
+
+/* ── BOOT ── */
+surveyStartTime = Date.now();
+initLangBar();
+renderLang(LANG_EN);
+</script>
+</body>
+</html>
