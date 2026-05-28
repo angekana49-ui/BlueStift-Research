@@ -3,7 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bluestift Research — 2025–2026</title>
+<title>Bluestift Research — What Really Happened in Classrooms in 2025–2026</title>
+
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<link rel="shortcut icon" href="/assets/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/assets/site.webmanifest" />
+
+<!-- PRIMARY SEO -->
+<meta name="description" content="A qualitative post-mortem study on EdTech friction in 2025–2026. Teachers and students share what actually worked, what failed, and what’s missing. No pitch — just research by Bluestift.">
+<meta name="keywords" content="EdTech research, classroom technology, teacher survey, student feedback, AI in education, LMS frustration, education technology 2026, Bluestift, RAYA AI tutor">
+<meta name="author" content="Bluestift">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+<meta name="revisit-after" content="7 days">
+<link rel="canonical" href="https://research.thebluestift.com/">
+
+<!-- OPEN GRAPH -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bluestift Research">
+<meta property="og:title" content="What really happened in classrooms in 2025–2026? Help us find out.">
+<meta property="og:description" content="We’re done pitching. We’re listening. 5 open questions for teachers and students — anonymous, 4 minutes, no agenda. Your answers shape what we build next.">
+<meta property="og:url" content="https://research.thebluestift.com/">
+<meta property="og:image" content="https://research.thebluestift.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bluestift Research — 2025–2026 Post-Mortem Study">
+<meta property="og:locale" content="en_US">
+
+<!-- TWITTER / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@thebluestift">
+<meta name="twitter:title" content="What really happened in classrooms in 2025–2026?">
+<meta name="twitter:description" content="We’re done pitching. 5 open questions for teachers & students. Anonymous, 4 minutes. Your words shape what we build.">
+<meta name="twitter:image" content="https://research.thebluestift.com/assets/og-image.png">
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://research.thebluestift.com/#website","url":"https://research.thebluestift.com/","name":"Bluestift Research","publisher":{"@id":"https://thebluestift.com/#organization"},"inLanguage":["en","fr","es","it","pt","de","ar"]},{"@type":"Organization","@id":"https://thebluestift.com/#organization","name":"Bluestift","url":"https://thebluestift.com","logo":{"@type":"ImageObject","url":"https://research.thebluestift.com/assets/bluestift-logo.jpeg"}},{"@type":"ResearchProject","name":"Bluestift EdTech Post-Mortem Study 2025–2026","url":"https://research.thebluestift.com/","startDate":"2026-05-01","endDate":"2026-06-30","about":[{"@type":"Thing","name":"Educational Technology"},{"@type":"Thing","name":"Artificial Intelligence in Education"}]}]}
+<\/script>
+
+<!-- PERF -->
+<meta name="theme-color" content="#7c8ef7">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://jkcztwqxvmsrfqiwvyxp.supabase.co" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <style>
@@ -319,17 +364,17 @@ const LANG_EN = {
   nav_btn:{back:'Back',next:'Next',submit:'Submit'},
   counter:(n,t)=>`${n} / ${t}`,
   teachers:[
-    {number:'Question 01',label:'The time sink',q:"Think about last week. Outside of actually teaching, what took the most time on your computer — and roughly how long?",ph:"Be specific if you can. 'Entering grades into PowerSchool for 45 min every evening' beats a vague answer every time."},
+    {number:'Question 01',label:'The time sink',q:"Looking back on this school year. Outside of actually teaching, what task consistently ate the most time on your computer — and roughly how many hours a week?",ph:"Be specific if you can. 'Entering grades into PowerSchool for 45 min every evening for 9 months' beats a vague answer every time."},
     {number:'Question 02',label:'The gap',q:"When a student is lost and you can't reach them in the moment — what usually happens next? What do they do, and what do you wish they had?",ph:'What do your students actually do at 10pm when they\'re stuck?'},
     {number:'Question 03',label:'The data blind spot',q:"When you look at your student data in your LMS, what's the one thing you wish it told you — that it never does?",ph:'The insight that would actually change how you teach the next day.'},
     {number:'Question 04',label:'The AI reality',q:"Has any student submitted AI-generated work this year? How did you handle it — and what did you actually need in that moment?",ph:"No judgment here. Just what really happened and what you were missing."},
     {number:'Question 05',label:'The one fix',q:"If you could fix one thing about the way technology works in your classroom — not a wishlist, just one real thing — what would it be?",ph:'The thing that, if fixed tomorrow, would make Monday noticeably better.'},
   ],
   students:[
-    {number:'Question 01',label:'The click moment',q:"Think about the last time something difficult actually clicked for you. Where were you, and what made it click?",ph:'Real learning, not just memorizing for a test.'},
+    {number:'Question 01',label:'The click moment',q:"Think back over this school year. What’s the one topic or concept that finally clicked for you — and what actually made it click?",ph:'Real learning, not just memorizing for a test.'},
     {number:'Question 02',label:'The stuck moment',q:"When you're stuck at night and can't ask your teacher — what do you actually do? Walk me through it.",ph:"YouTube, ChatGPT, a friend on Discord? Be honest — no one's grading this."},
     {number:'Question 03',label:'The AI truth',q:"Have you used AI for school this year? Don't worry about the rules — just tell me honestly how you used it and whether it actually helped you learn.",ph:"The real story, not the one you'd tell your teacher."},
-    {number:'Question 04',label:'The useless app',q:"What's the last app or tool your school made you use that felt like a complete waste of time? What made it useless?",ph:"Name it if you want. What specifically made it feel pointless?"},
+    {number:'Question 04',label:'The useless app',q:"Over this school year, what’s the app or tool your school made you use that felt like the biggest waste of time? What made it useless?",ph:"Name it if you want. What specifically made it feel pointless?"},
     {number:'Question 05',label:'The ideal tool',q:"If you had an app that actually helped you learn — not grade you, not track you, just genuinely help — what would it do first?",ph:"Not features. What would it feel like? What problem would it solve on day one?"},
   ],
   thankyou:{

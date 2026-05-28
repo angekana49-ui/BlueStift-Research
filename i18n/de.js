@@ -33,7 +33,7 @@ const LANG_DE = {
   teachers: [
     {
       number: 'Frage 01', label: 'Die Zeitfalle',
-      q: 'Denke an die letzte Woche. Abgesehen vom eigentlichen Unterrichten — was hat am Computer die meiste Zeit verschlungen, und wie lange ungefähr?',
+      q: 'Blick zurück auf dieses Schuljahr insgesamt. Abgesehen vom eigentlichen Unterrichten — welche Aufgabe hat am Computer die meiste Zeit verschlungen, und wie viele Stunden pro Woche ungefähr?',
       ph: 'Sei konkret wenn möglich. "45 Minuten täglich Noten in PowerSchool einpflegen" ist wertvoller als eine vage Antwort.',
     },
     {
@@ -76,7 +76,7 @@ const LANG_DE = {
     },
     {
       number: 'Frage 04', label: 'Die nutzlose App',
-      q: 'Welche App oder welches Tool hat deine Schule dich zuletzt benutzen lassen, das sich wie totale Zeitverschwendung angefühlt hat? Was machte es nutzlos?',
+      q: 'Über das gesamte Schuljahr — welche App oder welches Tool hat deine Schule dich benutzen lassen, das die größte Zeitverschwendung war? Was machte es nutzlos?',
       ph: 'Nenn es ruhig. Was machte es konkret zum Desaster?',
     },
     {

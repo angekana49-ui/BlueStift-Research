@@ -33,8 +33,8 @@ const LANG_IT = {
   teachers: [
     {
       number: 'Domanda 01', label: 'Il pozzo del tempo',
-      q: 'Pensa alla settimana scorsa. Al di fuori dell\'insegnamento vero e proprio, cosa ti ha rubato più tempo al computer — e quanto circa?',
-      ph: 'Sii specifico se puoi. "Inserire voti nel registro per 45 minuti ogni sera" vale più di una risposta vaga.',
+      q: 'Guardando indietro a questo anno scolastico. Al di fuori dell\'insegnamento vero e proprio, quale compito ti ha costantemente rubato più tempo al computer — e quante ore a settimana circa?',
+      ph: 'Sii specifico se puoi. "Inserire voti nel registro per 45 minuti ogni sera per 9 mesi" vale più di una risposta vaga.',
     },
     {
       number: 'Domanda 02', label: 'Il vuoto',
@@ -61,7 +61,7 @@ const LANG_IT = {
   students: [
     {
       number: 'Domanda 01', label: 'Il momento click',
-      q: 'Pensa all\'ultima volta che qualcosa di difficile ha davvero fatto "clic" per te. Dove eri e cos\'è che l\'ha fatto scattare?',
+      q: 'Ripensando a questo anno scolastico. Qual è l\'argomento o il concetto che finalmente ha fatto "clic" per te — e cosa lo ha fatto scattare?',
       ph: 'Apprendimento vero, non solo memorizzare per un\'interrogazione.',
     },
     {
@@ -76,7 +76,7 @@ const LANG_IT = {
     },
     {
       number: 'Domanda 04', label: 'L\'app inutile',
-      q: 'Qual è l\'ultima app o strumento che la tua scuola ti ha obbligato a usare e che ti è sembrata una perdita di tempo totale? Cosa la rendeva inutile?',
+      q: 'Nel corso di questo anno scolastico, qual è l\'app o lo strumento che la tua scuola ti ha obbligato a usare e che ti è sembrata la più grande perdita di tempo? Cosa la rendeva inutile?',
       ph: 'Nominala se vuoi. Cosa la rendeva un disastro concretamente?',
     },
     {

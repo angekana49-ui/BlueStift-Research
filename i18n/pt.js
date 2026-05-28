@@ -33,7 +33,7 @@ const LANG_PT = {
   teachers: [
     {
       number: 'Pergunta 01', label: 'O ralo de tempo',
-      q: 'Pense na semana passada. Fora do ensino em si, o que mais consumiu o seu tempo no computador — e quanto tempo aproximadamente?',
+      q: 'Olhando para este ano letivo como um todo. Fora do ensino em si, qual tarefa consumiu mais consistentemente o seu tempo no computador — e quantas horas por semana aproximadamente?',
       ph: 'Seja específico se puder. "Lançar notas no sistema por 45 min toda tarde" vale mais que uma resposta vaga.',
     },
     {
@@ -61,7 +61,7 @@ const LANG_PT = {
   students: [
     {
       number: 'Pergunta 01', label: 'O momento do clique',
-      q: 'Pense na última vez que algo difícil realmente fez "clic" pra você. Onde você estava e o que fez acontecer?',
+      q: 'Olhando para trás neste ano letivo. Qual é o tema ou conceito que finalmente fez sentido pra você — e o que realmente fez isso acontecer?',
       ph: 'Aprendizado de verdade, não só memorizar pra prova.',
     },
     {
@@ -76,7 +76,7 @@ const LANG_PT = {
     },
     {
       number: 'Pergunta 04', label: 'O app inútil',
-      q: 'Qual é o último app ou ferramenta que sua escola te obrigou a usar e que pareceu uma perda de tempo total? O que o tornava inútil?',
+      q: 'Ao longo deste ano letivo, qual é o app ou ferramenta que sua escola te obrigou a usar e que pareceu a maior perda de tempo? O que o tornava inútil?',
       ph: 'Pode nomear se quiser. O que o tornava um desastre concretamente?',
     },
     {

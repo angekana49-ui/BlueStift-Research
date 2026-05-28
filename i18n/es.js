@@ -33,8 +33,8 @@ const LANG_ES = {
   teachers: [
     {
       number: 'Pregunta 01', label: 'La trampa de tiempo',
-      q: 'Piensa en la semana pasada. Fuera de enseñar, ¿qué te quitó más tiempo frente al ordenador — y cuánto aproximadamente?',
-      ph: 'Sé específico si puedes. "Meter notas en la plataforma 45 min cada tarde" vale más que una respuesta vaga.',
+      q: 'Mirando atrás en este año escolar. Fuera de enseñar en sí, ¿qué tarea te ha consumido más tiempo de forma constante frente al ordenador — y cuántas horas a la semana aproximadamente?',
+      ph: 'Sé específico si puedes. "Meter notas en la plataforma 45 min cada tarde durante 9 meses" vale más que una respuesta vaga.',
     },
     {
       number: 'Pregunta 02', label: 'El vacío',
@@ -61,7 +61,7 @@ const LANG_ES = {
   students: [
     {
       number: 'Pregunta 01', label: 'El momento aha',
-      q: 'Piensa en la última vez que algo difícil de verdad hizo "clic" para ti. ¿Dónde estabas y qué fue lo que lo provocó?',
+      q: 'Mira atrás en este año escolar. ¿Cuál es el tema o concepto que por fin hizo "clic" para ti — y qué fue lo que lo provocó?',
       ph: 'Aprendizaje real, no solo memorizar para un examen.',
     },
     {
@@ -76,7 +76,7 @@ const LANG_ES = {
     },
     {
       number: 'Pregunta 04', label: 'La app inútil',
-      q: '¿Cuál es la última app o herramienta que tu colegio te obligó a usar y que te pareció una pérdida de tiempo total? ¿Qué la hacía inútil?',
+      q: 'A lo largo de este año escolar, ¿cuál es la app o herramienta que tu colegio te obligó a usar y que te pareció la mayor pérdida de tiempo? ¿Qué la hacía inútil?',
       ph: 'Nómbrala si quieres. ¿Qué la hacía un desastre concretamente?',
     },
     {
